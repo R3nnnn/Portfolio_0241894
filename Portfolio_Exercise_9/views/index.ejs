@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express test</title>
+</head>
+
+<body>
+    <h1>Get method lol</h1>
+    <% if (locals.error) { %>
+        <h3>
+            <%= error %>
+        </h3>
+        <% } %>
+            <form action="/greet" method="get">
+                Who's gonna chambear?:
+                <input type="text" name="name" id="name" placeholder="Name">
+                <input type="submit" value="go next">
+            </form>
+
+    
+    <form action="/task" method="post">
+        What task do you wanna do rn?:
+        <input type="text" name="task" id="task" placeholder="Task">
+        <input type="submit" value="Submit">
+    </form>
+
+    <h3>TO-DO list:</h3>
+    <% if (locals.tasks) { %> 
+        <div class="container">
+            <ul>
+                <% tasks.forEach(function(task, index) { %>
+                    <li><%= task %>
+                        <form action="/task/<%= index %>/delete" method="post">
+                            <input type="submit" value="Delete">
+                        </form>
+                        <form action="/task/<%= index %>/up" method="post">
+                            <input type="submit" value="↑">
+                        </form>
+                        <form action="/task/<%= index %>/down" method="post">
+                            <input type="submit" value="↓">
+                        </form>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+    <% } %>
+
+    <a href="/names">See names in JSON (Not the friday 13th one)</a>  
+    <a href="/task">see tasks in JSON (Not the friday 13th one)</a>
+    
+
+</body>
+
+</html>

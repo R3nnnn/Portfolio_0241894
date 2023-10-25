@@ -1,0 +1,22 @@
+<%- include("partials/head"); -%>
+    <div class="index" style="text-align: center;">
+        <img src="../images/StarLion.png" alt="lion brewery" />
+    <h5>Lion go rawr lol</h5>
+    <h1>Welcome, select a method to post something, anything. Rant in a post or express any feeling you have. I'm here to hear you... I mean, read you.</h1>
+    <h3>Secure Post method (No info shown)</h3>
+    <form action="/login" method="post">
+        <label for="name">User</label>
+        <input type="text" name="name" id="name" />
+        <input type="submit"/>
+    </form>
+
+    <h3>Not-so-secure Get method (Everyone can see who you are)</h3>
+    <form action="/login" method="get">
+        <label for="name">User</label>
+        <input type="text" name="name" id="name" />
+        <input type="submit"/>
+    </form>
+    </div>
+
+<%- include("partials/footer"); -%>
+
